@@ -246,7 +246,7 @@ const Skills: FC = () => {
     useState<SkillCategoryKey>("web");
 
   return (
-    <div className="relative">
+    <div className="h-auto ">
       <div className="mx-auto container px-6 py-20">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

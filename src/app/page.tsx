@@ -12,6 +12,7 @@ import { FiDownloadCloud } from "react-icons/fi";
 import { Badge } from "@/components/Badge/badge";
 import { skills } from "@/data/index";
 import { AnimatedCursor } from "@/components/Cursor/cursor";
+import Skills from "@/components/Skills/skills";
 
 const Hero = (props: any): any => {
   const [loading, setLoading] = useState<any>(true);
@@ -39,7 +40,7 @@ const Hero = (props: any): any => {
           url="https://www.buymeacoffee.com/bawanthathilan"
         />
       </div> */}
-      <div className="flex w-full h-screen justify-center">
+      <div className="flex w-full h-auto justify-center">
         <div className="relative h-[1224px] md:h-[clamp(300px,90vw,680px)] w-[clamp(300px,90vw,1140px)] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 auto-rows-auto gap-5">
           {/* Left Profile Card */}
           <div className="group border border-grey-200 dark:border-[#27272a] col-span-1 sm:col-span-2 md:col-span-2 row-span-1 md:row-span-3 bg-secondary rounded-2xl p-8 flex flex-col gap-5 cursor-pointer dark:bg-darkBg relative">
@@ -130,6 +131,10 @@ const Hero = (props: any): any => {
 
         </div>
       </div>
+
+      {/* Second page */}
+
+      <Skills />
     </>
   );
 };

@@ -37,7 +37,7 @@ const Navbar = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="lg:px-[5vw] xl:px-[20vw] md:px-[5vw] px-5 w-full py-2 mt-5 flex flex-row justify-around items-center sticky top-0 z-50 bg-red-400 dark:bg-[#121212] bg-opacity-60 ">
+    <nav className="lg:px-[5vw] xl:px-[20vw] md:px-[5vw] px-5 w-full py-2 mt-5 flex flex-row justify-around items-center sticky top-0 z-50 dark:bg-[#121212] bg-opacity-60 backdrop-blur-md">
       <Link href="/" className=''>
         <div className="logo">
           <span
