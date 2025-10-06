@@ -13,10 +13,13 @@ import { Badge } from "@/components/Badge/badge";
 import { skills } from "@/data/index";
 import { AnimatedCursor } from "@/components/Cursor/cursor";
 import Skills from "@/components/Skills/skills";
+import ProjectCard from "@/components/Projects/ProjectCard";
+import Projects from "@/components/Projects/data.json" 
 
 const Hero = (props: any): any => {
   const [loading, setLoading] = useState<any>(true);
   const [result, setResult] = useState<any>({});
+  const projects=Projects.Projects.filter((item)=>item.show===true);
 
   useEffect(() => {
     Promise.all([
@@ -133,8 +136,35 @@ const Hero = (props: any): any => {
       </div>
 
       {/* Second page */}
-
       <Skills />
+
+      {/* Projects */}
+      <div className=" w-screen container mx-auto px-10">
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center space-y-4 mb-16"
+          >
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+              Projects
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Explore my technical skills across different domains. Click on any
+              category to see the specific technologies and tools I work with.
+            </p>
+          </motion.div>
+      </div>
+      <div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">	
+          {projects.map((project, index) => (
+						<ProjectCard 
+              key={index}
+							project={project}
+							index={index}
+							activeCategory={1}
+						/>
+					))}
+			</div>
     </>
   );
 };
