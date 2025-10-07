@@ -120,42 +120,42 @@ const { slug } = use(params);
   }
 
   return (
-    <div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
+    <div className="relative min-h-screen w-full gap-4 p-5 md:p-10 flex justify-center items-center flex-col mb-10 ">
       {/* <FixedButon href="/projects"> */}
         {/* <FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" /> */}
       {/* </FixedButon> */}
       <ScrollDownButton />
-      <div className="min-h-screen flex justify-center items-center">
-        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-0">
-          <div className="min-h-screen sm:min-h-0 flex justify-center items-start flex-col mb-5 space-y-10 mx-auto">
+      <div className="flex justify-center items-center">
+        <div className="mx-auto grid md:gap-5 grid-cols-1 md:grid-cols-2 ">
+          <div className="h-auto py-20 md:py-0 sm:min-h-0 flex justify-center items-start flex-col md:mb-5 space-y-3 md:space-y-10 mx-auto">
             <div>
-              <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
+              <h2 className="uppercase dark:text-gray-50 font-normal text-lg tracking-[8px] text-neutral-400">
                 Project
               </h2>
-              <h1 className="text-4xl font-medium text-neutral-900">
+              <h1 className="text-4xl font-medium dark:text-gray-300 text-neutral-900">
                 {data.title}
               </h1>
             </div>
             <div>
-              <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
+              <h2 className="uppercase font-normal text-lg dark:text-gray-50 tracking-[8px] text-neutral-400">
                 Technology
               </h2>
-              <p className="text-2xl font-normal text-neutral-900">
+              <p className="text-2xl font-normal dark:text-gray-300 text-neutral-900">
                 {data.tech.join(", ")}
               </p>
             </div>
             <div>
-              <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
+              <h2 className="uppercase font-normal dark:text-gray-50 text-lg tracking-[8px] text-neutral-400">
                 Year
               </h2>
-              <p className="text-2xl font-normal text-neutral-900">{data.year}</p>
+              <p className="text-2xl font-normal dark:text-gray-300 text-neutral-900">{data.year}</p>
             </div>
             {data.preview && (
               <div>
-                <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
+                <h2 className="uppercase font-normal dark:text-gray-50 text-lg tracking-[8px] text-neutral-400">
                   Preview
                 </h2>
-                <p className="text-2xl font-normal text-neutral-900">
+                <p className="text-2xl font-normal dark:text-gray-300 text-neutral-900">
                   <a
                     href={data.preview}
                     target="_blank"
@@ -185,13 +185,13 @@ const { slug } = use(params);
             )}
           </div>
           <div className="flex justify-start items-start flex-col mb-5 ">
-            <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
+            <h2 className="uppercase font-normal dark:text-gray-50 text-lg tracking-[8px] text-neutral-400">
               Description
             </h2>
             {data.desc.map((desc, index) => (
               <p
                 key={index}
-                className="text-xl text-justify tracking-wide font-normal text-gray-500 mb-5"
+                className="text-xl text-justify dark:text-gray-300 tracking-wide font-normal text-gray-500 mb-5"
               >
                 {desc}
               </p>
