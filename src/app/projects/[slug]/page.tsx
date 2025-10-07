@@ -58,7 +58,7 @@ function ScrollDownButton() {
   };
 
   return (
-    <div className="fixed bottom-5 left-0 right-0 flex justify-center items-center mb-10">
+    <div className="fixed bottom-5 overflow-hidden left-0 right-0 flex justify-center items-center mb-10">
       <motion.div
         className="h-10 w-10 bg-neutral-900 rounded-full flex justify-center items-center cursor-pointer"
         whileHover={{ scale: 1.1 }}
@@ -77,22 +77,24 @@ function ScrollDownButton() {
 function Page({ params }: PageProps) {
   const [data, setData] = useState<Project | "404" | null>(null);
 const { slug } = use(params);
+
   useEffect(() => {
-    const selectedData = (jsonData.Projects as Project[]).find(
-      (item) => item.slug === slug
-    );
-    if (selectedData === undefined) {
-      setData("404");
-    } else {
-      setData(selectedData);
-    }
-  }, [slug]);
+  import("@/components/Projects/data.json")
+    .then((module) => {
+      const selectedData = (module.default.Projects as Project[]).find(
+        (item) => item.slug === slug
+      );
+      setData(selectedData ?? "404");
+    })
+    .catch(() => setData("404"));
+}, [slug]);
+
 
   if (data === "404") {
     return <NotFound />;
   } else if (!data) {
     return (
-      <div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
+      <div className="relative overflow-hidden min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
         <div className="min-h-screen flex justify-center items-center w-full">
           <div className="mx-auto grid grid-cols-1 md:grid-cols-2 w-full">
             <div className="flex justify-center items-start flex-col mb-5 space-y-10 w-full p-4">
@@ -197,23 +199,27 @@ const { slug } = use(params);
           </div>
         </div>
       </div>
-      <div className="mx-auto grid grid-cols-1 p-5 md:p-20 w-full">
-        <div className="w-full h-auto text-center flex flex-col justify-center ">
-          {data.images.map((image, index) => (
-            <Image
-              key={index}
-              src={image}
-              alt={`Project Image ${index + 1}`}
-              className="mb-5 h-auto max-h-screen max-w-7xl mx-auto"
-              width={1920}
-              height={1080}
-              placeholder="blur"
-              blurDataURL={BlurImage.src}
-              style={{ objectFit: "contain" }}
-            />
-          ))}
-        </div>
+      <div className="mx-auto w-full p-1 md:p-20">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+    {data.images.map((image, index) => (
+      <div
+        key={index}
+        className="relative w-full max-w-[1000px] aspect-video bg-neutral-100 rounded-lg overflow-hidden flex justify-center items-center"
+      >
+        <Image
+          src={image}
+          alt={`Project Image ${index + 1}`}
+          className="object-contain w-full h-full"
+          width={1920}
+          height={1080}
+          placeholder="blur"
+          blurDataURL={BlurImage.src}
+        />
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 }

@@ -4,24 +4,7 @@ import { RiSupabaseLine } from 'react-icons/ri';
 import { DiPhotoshop } from 'react-icons/di';
 import { TbBrandTypescript, TbBrandNextjs } from 'react-icons/tb';
 
-export const menuData = [
-  {
-    name: 'Home',
-    link: '/'
-  },
-  {
-    name: 'Work',
-    link: '/#work'
-  },
-  {
-    name: 'About',
-    link: '/about'
-  },
-  {
-    name: 'Contact',
-    link: '/#contact'
-  }
-];
+
 
 export const comments = [
   {

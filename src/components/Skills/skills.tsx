@@ -13,7 +13,7 @@ interface SkillCategory {
   tools: string[];
 }
 
-type SkillCategoryKey = "web" | "api" | "ai" | "mobile";
+type SkillCategoryKey = "web" | "api" | "ai";
 
 // ---------------- Data ----------------
 const skillCategories: Record<SkillCategoryKey, SkillCategory> = {
@@ -26,29 +26,26 @@ const skillCategories: Record<SkillCategoryKey, SkillCategory> = {
       "CSS",
       "JavaScript",
       "TypeScript",
-      "PHP",
-      "Python",
       "React",
       "NextJS",
       "TailwindCSS",
-      "Bootstrap",
-      "NodeJS",
-      "ExpressJS",
-      "Laravel",
       "Flask",
+      "SQL",
+      "Drizzle",
+      "Prisma",
+      "Python",
       "Django",
-      "Firebase",
+      "Supabase",
     ],
     tools: [
       "Visual Studio Code",
       "Git",
       "Github",
       "Figma",
-      "Vite",
       "Docker",
-      "Kubernetes",
-      "Google Cloud",
-      "Postman",
+      "Cloudflare",
+      "Vercel",
+      "Railway"
     ],
   },
   api: {
@@ -56,28 +53,21 @@ const skillCategories: Record<SkillCategoryKey, SkillCategory> = {
     icon: LuCircleSlash,
     description: "Creating robust and scalable backend services",
     languages: [
-      "NodeJS",
-      "ExpressJS",
-      "PHP",
-      "Laravel",
       "Python",
       "FastAPI",
       "Flask",
       "Django",
       "MySQL",
       "PostgreSQL",
-      "MongoDB",
-      "Firebase",
+      "Supabase",
+      "ORM"
     ],
     tools: [
       "Postman",
       "Docker",
-      "Kubernetes",
-      "Swagger",
       "Git",
       "Github",
-      "Google Cloud",
-      "IBM Cloud",
+      "Cloudflare",
     ],
   },
   ai: {
@@ -94,24 +84,17 @@ const skillCategories: Record<SkillCategoryKey, SkillCategory> = {
       "Jupyter",
       "OpenAI API",
       "Gemini API",
-      "LangChain",
+      "Retrieval-Augmented Generation"
     ],
     tools: [
       "Jupyter Notebook",
+      "Visual Studio Code",
+      "Git",
+      "Github",
       "Google Colab",
-      "Google Cloud AI",
-      "AWS SageMaker",
-      "IBM Watson",
+      "Google Cloud AI"
     ],
-  },
-  mobile: {
-    title: "Mobile Development",
-    icon: LuCircleSlash,
-    description: "Cross-platform mobile app development",
-    languages: ["React Native", "JavaScript", "TypeScript", "Dart", "Flutter"],
-    tools: ["Android Studio", "React Native CLI"],
-  },
-};
+  }};
 
 // ---------------- Components ----------------
 interface SkillCardProps {
@@ -125,7 +108,7 @@ const SkillCard: FC<SkillCardProps> = ({ skill, isSelected, onClick }) => {
   return (
     <motion.div
       onClick={onClick}
-      className={`relative cursor-pointer group p-6 rounded-2xl backdrop-blur-lg border transition-all duration-300 ${
+      className={`relative cursor-pointer flex items-center justify-center group p-6 rounded-2xl backdrop-blur-lg border bg-gradient-to-r from-gray-200/60 to-white/40 dark:bg-none  transition-all duration-300 ${
         isSelected
           ? "bg-white/20 border-black border-2 shadow-lg"
           : "bg-white/10 border-gray-300/20 hover:bg-white/20 hover:border-gray-300/30"
@@ -155,10 +138,10 @@ const SkillCard: FC<SkillCardProps> = ({ skill, isSelected, onClick }) => {
           <Icon className="w-8 h-8 text-black" />
         </div>
         <div>
-          <h3 className="font-semibold text-black text-lg mb-2">
+          <h3 className="font-semibold text-black dark:text-gray-200 text-lg mb-2">
             {skill.title}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             {skill.description}
           </p>
         </div>
@@ -188,7 +171,7 @@ const SkillDetails: FC<SkillDetailsProps> = ({ selectedSkill }) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <h3 className="text-2xl font-semibold text-black mb-6 text-center">
+        <h3 className="text-2xl font-semibold text-black dark:text-gray-200 mb-6 text-center">
           Languages & Frameworks
         </h3>
         <div className="flex flex-wrap justify-center gap-3">
@@ -216,7 +199,7 @@ const SkillDetails: FC<SkillDetailsProps> = ({ selectedSkill }) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4 }}
       >
-        <h3 className="text-2xl font-semibold text-black mb-6 text-center">
+        <h3 className="text-2xl font-semibold text-black dark:text-gray-200 mb-6 text-center">
           Tools & Technologies
         </h3>
         <div className="flex flex-wrap justify-center gap-3">
@@ -254,17 +237,17 @@ const Skills: FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center space-y-4 mb-16"
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold text-black dark:text-gray-200 ">
             Skills & Expertise
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="dark:text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
             Explore my technical skills across different domains. Click on any
             category to see the specific technologies and tools I work with.
           </p>
         </motion.div>
 
         {/* Skill Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {Object.entries(skillCategories).map(([key, skill], index) => (
             <motion.div
               key={key}

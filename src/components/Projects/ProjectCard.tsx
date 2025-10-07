@@ -4,77 +4,77 @@ import { motion } from "framer-motion";
 import BlurImage from "../../../public/kevin/blur.jpg";
 
 type Project = {
-	slug: string;
-	category: number[];
-	thumbnail: string;
-	year: string | number;
-	title: string;
-	desc: string[];
-	tech: string[];
+  slug: string;
+  category: number[];
+  thumbnail: string;
+  year: string | number;
+  title: string;
+  desc: string[];
+  tech: string[];
 };
 
 interface ProjectCardProps {
-	project: Project;
-	index: number;
-	activeCategory: string | number;
+  project: Project;
+  index: number;
+  activeCategory: string | number;
 }
 
 export default function ProjectCard({
-	project,
-	index,
-	activeCategory,
+  project,
+  index,
+  activeCategory,
 }: ProjectCardProps) {
-	return (
-		<>
-			{project.category.includes(Number(activeCategory)) && (
-				<Link href={`/projects/${project.slug}`} key={index}>
-					<motion.div
-						className="z-10 relative flex justify-center items-start flex-col mb-5 md:px-10 w-full h-auto bg-gray-400 group/tes py-20 px-5 md:py-2 aspect-video"
-						initial={{
-							opacity: 0,
-							x: -200,
-						}}
-						whileInView={{
-							opacity: 1,
-							x: 0,
-						}}
-						transition={{
-							type: "spring",
-						}}
-					>
-						<Image
-							src={project.thumbnail}
-							alt={project.title}
-							fill
-							placeholder="blur"
-							className="bg-slate-950 opacity-10 group-hover/tes:opacity-100 transition-all ease duration-500"
-							blurDataURL={BlurImage.src}
-							style={{ objectFit: "cover" }}
-						/>
-						<div className="absolute top-0 left-0 bg-gray-600 px-4 py-2">
-							<h4 className="text-white">{project.year}</h4>
-						</div>
-						<div className="transition-all ease duration-500 opacity-100 content text-center group-hover/tes:opacity-0 z-10">
-							<h1 className="text-3xl font-bold mb-3">{project.title}</h1>
-							<p>
-								{project.desc[0].length > 125
-									? `${project.desc[0].slice(0, 125)}...`
-									: project.desc[0]}
-							</p>
-							<div className="flex justify-center items-center flex-row mt-5 flex-wrap">
-								{project.tech.map((t, i) => (
-									<span
-										key={i}
-										className="m-1 px-4 py-2 bg-gray-600 text-white"
-									>
-										{t}
-									</span>
-								))}
-							</div>
-						</div>
-					</motion.div>
-				</Link>
-			)}
-		</>
-	);
+  return (
+    <>
+      {project.category.includes(Number(activeCategory)) && (
+        <Link href={`/projects/${project.slug}`} key={index}>
+          <motion.div
+            className="z-10 relative flex overflow-clip justify-center items-start flex-col mb-5 md:px-10 w-full h-auto bg-gradient-to-br from-white/20 to-white/10 dark:from-gray-800/40 dark:to-gray-900/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/40 rounded-2xl shadow-lg group/tes py-20 px-5 md:py-2 aspect-video"
+            initial={{
+              opacity: 0,
+              x: -200,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              type: "spring",
+            }}
+          >
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              fill
+              placeholder="blur"
+              className="bg-gray-300 opacity-10 group-hover/tes:opacity-100 transition-all ease duration-500"
+              blurDataURL={BlurImage.src}
+              style={{ objectFit: "cover" }}
+            />
+            <div className="absolute top-0 left-0 bg-gray-600 px-4 py-2">
+              <h4 className="text-white">{project.year}</h4>
+            </div>
+            <div className="transition-all ease duration-500 opacity-100 content text-center group-hover/tes:opacity-0 z-10">
+              <h1 className="text-3xl font-bold mb-3">{project.title}</h1>
+              <p>
+                {project.desc[0].length > 125
+                  ? `${project.desc[0].slice(0, 125)}...`
+                  : project.desc[0]}
+              </p>
+              <div className="flex justify-center items-center flex-row mt-5 flex-wrap">
+                {project.tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="m-1 px-4 py-2 bg-gray-600 text-white"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </Link>
+      )}
+    </>
+  );
 }

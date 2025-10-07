@@ -14,7 +14,7 @@ import { RiTwitterXFill } from 'react-icons/ri';
 import { CiDark, CiMenuFries } from 'react-icons/ci';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdLightMode } from 'react-icons/md';
-import { menuData } from '../../data/index';
+// import { menuData } from '../../data/index';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 
@@ -27,6 +27,24 @@ const Navbar = () => {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const menuData = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'Skills',
+    link: '/#work'
+  },
+  {
+    name: 'Projects',
+    link: '/about'
+  },
+  {
+    name: 'Contact',
+    link: '/#contact'
+  }
+];
 
   const [mounted, setMounted] = useState(false);
 
