@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import Marqueee from 'react-fast-marquee';
 
 import { useTheme } from 'next-themes';
@@ -9,7 +9,7 @@ interface MarqueeProps {
 }
 
 const CustomMarquee = ({ children, direction = 'right' }: MarqueeProps) => {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme  } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
   return (
     <div className=" w-full relative">

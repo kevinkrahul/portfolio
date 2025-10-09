@@ -1,5 +1,5 @@
 import { IoLogoJavascript } from 'react-icons/io';
-import { FaFigma, FaReact, FaDocker, FaGit } from 'react-icons/fa';
+import { FaFigma, FaReact, FaDocker  } from 'react-icons/fa';
 import { RiSupabaseLine } from 'react-icons/ri';
 import { DiPhotoshop } from 'react-icons/di';
 import { TbBrandTypescript, TbBrandNextjs } from 'react-icons/tb';

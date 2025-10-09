@@ -3,14 +3,11 @@ import React, { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import {
-  FaFacebookF,
-  FaInstagram,
   FaGithub,
   FaLinkedinIn,
   FaTiktok,
   FaYoutube
 } from 'react-icons/fa';
-import { RiTwitterXFill } from 'react-icons/ri';
 import { CiDark, CiMenuFries } from 'react-icons/ci';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdLightMode } from 'react-icons/md';
@@ -21,12 +18,9 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedLink, setSelectedLink] = useState('Home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+
   const menuData = [
   {
     name: 'Home',

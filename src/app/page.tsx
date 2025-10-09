@@ -18,7 +18,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-const Hero = (props: any): any => {
+const Hero = ()=> {
   const projects = Projects.Projects.filter((item) => item.show === true);
 
   return (

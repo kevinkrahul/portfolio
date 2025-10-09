@@ -1,13 +1,11 @@
 "use client";
 import { useState, useEffect, use } from "react";
 import { motion } from "framer-motion";
-import jsonData from "@/components/Projects/data.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faArrowUpRightFromSquare,
-  faChevronLeft,
   faChevronDown,
   faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
