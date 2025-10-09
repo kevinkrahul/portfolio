@@ -40,7 +40,7 @@ const Hero = ()=> {
               <div>
                 <h1 className="text-3xl md:text-4xl">
                   <span className="font-medium text-textSecondary titleFont">
-                    hey, I'm
+                    hey, I{"'"}m
                   </span>
                   <br />
                   <span className="font-bold text-primary titleFont dark:text-white">
