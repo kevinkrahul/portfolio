@@ -30,19 +30,19 @@ const Navbar = () => {
   const menuData = [
   {
     name: 'Home',
-    link: '/'
+    link: '/#Home'
   },
   {
     name: 'Skills',
-    link: '/#work'
+    link: '/#Skills'
   },
   {
     name: 'Projects',
-    link: '/about'
+    link: '/#Project'
   },
   {
     name: 'Contact',
-    link: '/#contact'
+    link: '/#Contact'
   }
 ];
 
@@ -61,9 +61,9 @@ const Navbar = () => {
           <span
             className={` ${
               currentTheme === 'dark' ? 'text-white' : 'text-textPrimary '
-            } text-3xl font-bold`}
+            } text-2xl font-bold`}
           >
-            bɔː.wæn.θə
+            Ҝ乇ᐯ丨几 尺卂卄ㄩㄥ
           </span>
         </div>
       </Link>
