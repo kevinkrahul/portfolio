@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useState, FC } from "react";
 // import { CodepenIcon, WebhookIcon, ActivityIcon, MobileIcon } from "./icons";
 import { LuCircleSlash } from "react-icons/lu";
@@ -106,6 +107,7 @@ interface SkillCardProps {
 const SkillCard: FC<SkillCardProps> = ({ skill, isSelected, onClick }) => {
   const Icon = skill.icon;
   return (
+  <Link href="/#skillbar"  >
     <motion.div
       onClick={onClick}
       className={`relative cursor-pointer flex items-center justify-center group p-6 rounded-2xl backdrop-blur-lg border bg-gradient-to-r from-gray-200/60 to-white/40 dark:bg-none  transition-all duration-300 ${
@@ -147,6 +149,7 @@ const SkillCard: FC<SkillCardProps> = ({ skill, isSelected, onClick }) => {
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 };
 
@@ -166,6 +169,7 @@ const SkillDetails: FC<SkillDetailsProps> = ({ selectedSkill }) => {
     >
       {/* Languages & Frameworks */}
       <motion.div
+      id="skillbar"
         className="backdrop-blur-lg bg-white/20 border border-gray-300/30 rounded-2xl p-8"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}

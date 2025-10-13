@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   FaGithub,
+  FaInstagram,
   FaLinkedinIn,
   FaTiktok,
   FaYoutube
@@ -11,9 +12,9 @@ import {
 import { CiDark, CiMenuFries } from 'react-icons/ci';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdLightMode } from 'react-icons/md';
-// import { menuData } from '../../data/index';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
+import { FaDiscord } from 'react-icons/fa6';
 
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -114,31 +115,31 @@ const Navbar = () => {
       <div className="social-links gap-5 hidden sm:hidden md:flex ">
         <Link
           aria-label="github"
-          href="https://github.com/Bawanthathilan"
+          href="https://github.com/kevinkrahul"
           target="_blank"
         >
           <FaGithub className="text-textPrimary dark:text-white text-md" />
         </Link>
         <Link
           aria-label="linkedin"
-          href="https://www.linkedin.com/in/bawanthathilan/"
+          href="https://www.linkedin.com/in/kevinkrahul"
           target="_blank"
         >
           <FaLinkedinIn className="text-textPrimary dark:text-white text-md" />
         </Link>
         <Link
-          aria-label="linkedin"
-          href="https://www.youtube.com/@bawantharathnayaka"
+          aria-label="instagram"
+          href="https://www.instagram.com/kevinkrahul"
           target="_blank"
         >
-          <FaYoutube className="text-textPrimary dark:text-white text-md" />
+          <FaInstagram className="text-textPrimary dark:text-white text-md" />
         </Link>
         <Link
-          aria-label="linkedin"
-          href="https://www.tiktok.com/@bawwa_98"
+          aria-label="discord"
+          href="https://discordapp.com/users/kevinrahul"
           target="_blank"
         >
-          <FaTiktok className="text-textPrimary dark:text-white text-md" />
+          <FaDiscord className="text-textPrimary dark:text-white text-md" />
         </Link>
       </div>
 

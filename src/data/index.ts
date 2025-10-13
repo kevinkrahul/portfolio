@@ -1,8 +1,15 @@
 import { IoLogoJavascript } from 'react-icons/io';
-import { FaFigma, FaReact, FaDocker  } from 'react-icons/fa';
+import { FaFigma, FaReact, FaDocker, FaPython  } from 'react-icons/fa';
 import { RiSupabaseLine } from 'react-icons/ri';
 import { DiPhotoshop } from 'react-icons/di';
 import { TbBrandTypescript, TbBrandNextjs } from 'react-icons/tb';
+import { VscTerminalLinux } from "react-icons/vsc";
+import { FaGithub } from "react-icons/fa6";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { BsFiletypeSql } from "react-icons/bs";
+import { SiGooglegemini } from "react-icons/si";
+import { AiOutlineHtml5 } from "react-icons/ai";
+
 
 
 
@@ -78,16 +85,40 @@ export const skills = [
     icon: IoLogoJavascript
   },
   {
+    name: 'Postgress',
+    icon: BiLogoPostgresql
+  },
+  {
+    name: 'Github',
+    icon: FaGithub
+  },
+  {
+    name: 'Python',
+    icon: FaPython
+  },
+  {
     name: 'Typescript',
     icon: TbBrandTypescript
+  },
+  {  
+    name: 'Linux',
+    icon: VscTerminalLinux
   },
   {
     name: 'React',
     icon: FaReact
   },
   {
+    name: 'GENai',
+    icon: SiGooglegemini
+  },
+  {
     name: 'Next JS',
     icon: TbBrandNextjs
+  },
+  {
+    name: 'SQL',
+    icon: BsFiletypeSql
   },
   {
     name: 'Figma',
@@ -106,7 +137,7 @@ export const skills = [
     icon: RiSupabaseLine
   },
   {
-    name: 'FaGit',
-    icon: FaDocker
+    name: 'HTML',
+    icon: AiOutlineHtml5
   }
 ];

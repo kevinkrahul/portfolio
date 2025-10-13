@@ -83,8 +83,8 @@ const Hero = ()=> {
               </h1>
               <div className="flex flex-col gap-4">
                 <CustomMarquee direction="right">
-                  <div className="flex gap-5">
-                    {skills.slice(0, 4).map((skill, index) => (
+                  <div className="flex gap-5 px-2">
+                    {skills.slice(0, 7).map((skill, index) => (
                       <div
                         key={index}
                         className="p-3 rounded-md border border-opacity-20 border-blue-500/40"
@@ -95,8 +95,8 @@ const Hero = ()=> {
                   </div>
                 </CustomMarquee>
                 <CustomMarquee direction="left">
-                  <div className="flex gap-5">
-                    {skills.slice(4, 9).map((skill, index) => (
+                  <div className="flex gap-5 px-2">
+                    {skills.slice(7, 15).map((skill, index) => (
                       <div
                         key={index}
                         className="p-3 rounded-md border border-opacity-20 border-blue-500/40"
