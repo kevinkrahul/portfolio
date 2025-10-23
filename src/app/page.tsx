@@ -186,14 +186,14 @@ const Hero = ()=> {
               type: "spring",
             }}
           >
-            <a href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,">
-              senkuresearch@gmail.com
+            <a href="mailto:kevinkrahul1878@gmail.com?subject=Hello&body=Hello Kevin!,">
+              kevinkrahul1878@gmail.com
             </a>
           </motion.p>
           {/* icons */}
           <div className="flex justify-center items-center space-x-4">
             <motion.a
-              href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,"
+              href="mailto:kevinkrahul1878@gmail.com?subject=Hello&body=Hello Kevin!,"
               className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
