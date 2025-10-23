@@ -48,11 +48,14 @@
       "year": "2025",
       "preview": "https://www.kevinrahul.me",
       "code": "",
-      "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
+      "thumbnail": "/port/home.png",
       "images": [
-        "/image/projects/web/apii-portfolio/porto1.png",
-        "/image/projects/web/apii-portfolio/porto2.png",
-        "/image/projects/web/apii-portfolio/porto3.png"
+        "/port/home.png",
+        "/port/home2.png",
+        "/port/skills.png",
+        "/port/project.png",
+        "/port/project2.png",
+        "/port/pro.png"
       ],
       "tech": [
         "NextJS",
@@ -171,11 +174,12 @@
       "year": "2023",
       "preview": "",
       "code": "https://github.com/Alvalens/generative-trivia",
-      "thumbnail": "/image/projects/web/trivia/trivia-thumbnail.png",
+      "thumbnail": "/trike/trike.jpeg",
       "images": [
-        "/image/projects/web/trivia/trivia1.png",
-        "/image/projects/web/trivia/trivia2.png",
-        "/image/projects/web/trivia/trivia3.png"
+        "/trike/trike.jpeg",
+        "/trike/trike1.jpeg",
+        "/trike/trike2.jpeg",
+        "/trike/arch.png"
       ],
       "tech": [
         "Python",
